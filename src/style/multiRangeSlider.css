@@ -10,15 +10,22 @@
     position: absolute;
   }
   
+  .slider__range {
+    z-index: 2;
+  }
+
   .slider__track {
     background-color: #ced4da;
     width: 100%;
     z-index: 1;
   }
   
-  .slider__range {
+  .slider__range__cyan {
     background-color: #9fe5e1;
-    z-index: 2;
+  }
+
+  .slider__range__green {
+    background-color: #00ff2a;
   }
   
   /* Removing the default appearance */

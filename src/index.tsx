@@ -9,7 +9,7 @@ const App = () => {
   const [maxValue, setMaxValue] = useState(500)
 
   return (
-    <MultiRangeSlider defaultMin={24} defaultMax={506} minValue={minValue} maxValue={maxValue} margin={50} 
+    <MultiRangeSlider defaultMin={24} defaultMax={506} minValue={minValue} maxValue={maxValue} margin={50} color='cyan'
     onChange={(newActualMin: number, newActualMax: number) => {
         setMinValue(newActualMin);
         setMaxValue(newActualMax); 
