@@ -3,18 +3,24 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import {MultiRangeSlider} from "./components/MultiRangeSlider";
+import { SingleRangeSlider } from './components/SingleRangeSlider';
+import "./style/multiRangeSlider.css"
 
 const App = () => {
-  const [minValue, setMinValue] = useState(38)
-  const [maxValue, setMaxValue] = useState(500)
+  const [singleSliderValue, setSingleSliderValue] = useState(0);
+  /*const [minValue, setMinValue] = useState(0)
+  const [maxValue, setMaxValue] = useState(500)*/
 
   return (
-    <MultiRangeSlider defaultMin={24} defaultMax={506} minValue={minValue} maxValue={maxValue} margin={50} color='cyan'
+    /*<MultiRangeSlider defaultMin={0} defaultMax={500} minValue={minValue} maxValue={maxValue} margin={0} color='green'
     onChange={(newActualMin: number, newActualMax: number) => {
         setMinValue(newActualMin);
         setMaxValue(newActualMax); 
       }
-    }/>
+    }/>*/
+    <SingleRangeSlider defaultMinValue={0} defaultMaxValue={100} actualValue={singleSliderValue} color='green' 
+      onChange={(actualValue:number) => {setSingleSliderValue(actualValue)}}
+    />
   )
 }
 

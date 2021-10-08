@@ -1,5 +1,9 @@
 import "../style/multiRangeSlider.css"
 
+//TODO: Flag para mostrar u ocultar los labels, recibirlos por props. defecto: no mostrar. 
+//      FIX valores con coma. 
+//      ADD single slider.
+
 type updateCurrentValuesFunctionType = (newActualMin: number, newActualMax: number) => any
 
 interface MultiRangeSliderProps {
