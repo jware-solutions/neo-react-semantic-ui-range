@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
+import {RangeColor} from './types';
 import {MultiRangeSlider} from "./components/MultiRangeSlider";
 import { SingleRangeSlider } from './components/SingleRangeSlider';
 import "./style/multiRangeSlider.css"
@@ -18,8 +17,8 @@ const App = () => {
         setMaxValue(newActualMax); 
       }
     }/>*/
-    <SingleRangeSlider defaultMinValue={0} defaultMaxValue={100} actualValue={singleSliderValue} color='green' 
-      onChange={(actualValue:number) => {setSingleSliderValue(actualValue)}}
+    <SingleRangeSlider defaultMinValue={0} defaultMaxValue={100} actualValue={singleSliderValue} color={RangeColor.Azure} 
+      showLabels={true} onChange={(actualValue:number) => {setSingleSliderValue(actualValue)}}
     />
   )
 }
@@ -30,8 +29,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

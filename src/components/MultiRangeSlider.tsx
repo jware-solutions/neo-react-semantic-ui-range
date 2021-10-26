@@ -1,4 +1,5 @@
 import "../style/multiRangeSlider.css"
+import {RangeColor} from '../types'
 
 //TODO: Flag para mostrar u ocultar los labels, recibirlos por props. defecto: no mostrar. 
 //      FIX valores con coma. 
@@ -15,7 +16,8 @@ interface MultiRangeSliderProps {
     minValue: number,
     maxValue: number;
     margin?: number;
-    color?: "green" | "cyan"
+    color?: RangeColor,
+    showLabels?: boolean,
     onChange: updateCurrentValuesFunctionType
 };
 
@@ -25,7 +27,7 @@ interface MultiRangeSliderProps {
  * @returns 
  */
 const MultiRangeSlider = function(props : MultiRangeSliderProps){
-    const {defaultMin, defaultMax, minValue, maxValue, onChange, margin = 0, color = 'green'} = props;
+    const {defaultMin, defaultMax, minValue, maxValue, onChange, margin = 0, showLabels = false, color = RangeColor.Green} = props;
 
     // Convert to percentage
     const getPercent = (value:number) => {
@@ -42,6 +44,15 @@ const MultiRangeSlider = function(props : MultiRangeSliderProps){
             return; 
         }
         onChange(newMinValue, newMaxValue)
+    }
+
+    const renderLabels = () => {
+        if (showLabels){
+            return <>
+                <div className="slider__left-value">{minValue}</div>
+                <div className="slider__right-value">{maxValue}</div>
+            </>
+        }
     }
 
     const minPercent = getPercent(minValue);
@@ -72,9 +83,8 @@ const MultiRangeSlider = function(props : MultiRangeSliderProps){
             />
             <div className="slider">
                 <div className="slider__track"/>
-                <div className="slider__left-value">{minValue}</div>
-                <div className="slider__right-value">{maxValue}</div>
-                <div style={{left: left, width:width}} className={`slider__range slider__range__${color}`} />
+                {renderLabels()}
+                <div style={{left: left, width:width, backgroundColor:color}} className={"slider__range"} />
             </div>
         </>
     );

@@ -1,15 +1,18 @@
+import {RangeColor} from '../types'
+
 type updateCurrentValueFunctionType = (newActualValue : number) => any; 
 
 interface SingleRangeSliderProps {
     defaultMinValue: number,
     defaultMaxValue: number,
     actualValue: number
-    color?: "green" | "cyan"
+    color?: RangeColor
+    showLabels?: boolean,
     onChange: updateCurrentValueFunctionType
 }
 
 const SingleRangeSlider = function (props: SingleRangeSliderProps) {
-    const {defaultMinValue, defaultMaxValue, actualValue, color = 'green', onChange} = props; 
+    const {defaultMinValue, defaultMaxValue, actualValue, color = RangeColor.Green, showLabels = false, onChange} = props; 
 
     const handleValueChange = (newValue:number) => {
         if (newValue >= defaultMinValue && newValue <= defaultMaxValue){
@@ -22,6 +25,14 @@ const SingleRangeSlider = function (props: SingleRangeSliderProps) {
     }
 
     const selectedPercent = `${getSelectedSliderPercent(actualValue)}%`
+
+    const renderLabels = () => {
+        if (showLabels){
+            return <>
+                <div className="slider__left-value">{actualValue}</div> 
+            </>
+        }
+    }
 
     return (
         <>
@@ -36,8 +47,8 @@ const SingleRangeSlider = function (props: SingleRangeSliderProps) {
             />
               <div className="slider">
                 <div className="slider__track"/>
-                <div className="slider__left-value">{actualValue}</div>
-                <div style={{width:selectedPercent}} className={`slider__range slider__range__${color}`} />
+                {renderLabels()}
+                <div style={{width:selectedPercent, backgroundColor:color}} className={"slider__range"} />
             </div>
         </>
     )
