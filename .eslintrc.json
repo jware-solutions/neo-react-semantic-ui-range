@@ -16,7 +16,7 @@
             "jsx": true,
             "impliedStrict": true
         },
-        "ecmaVersion": "latest",
+        "ecmaVersion": 2021,
         "sourceType": "module"
     },
     "plugins": [
