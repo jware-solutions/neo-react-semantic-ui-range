@@ -1,7 +1,7 @@
 import { SliderProps } from '../types'
 
 // Styles
-import '../style/multiRangeSlider.css'
+import '../styles.css'
 
 interface MultiRangeSliderProps extends SliderProps {
   /** Starting minium value set on the slider. */
