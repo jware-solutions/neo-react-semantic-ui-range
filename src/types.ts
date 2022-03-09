@@ -146,9 +146,9 @@ interface SliderProps {
     defaultMinValue: number;
     /** Maximum value that can be set on the slider. */
     defaultMaxValue: number;
-    /** Color of the selected slice of the slider. */
+    /** Color of the selected slice of the slider. Default to 'Green'. */
     color?: RangeColor;
-    /** Indicates if minimum/maximum values labels should be shown. */
+    /** Indicates if minimum/maximum values labels should be shown. Default to `false`. */
     showLabels?: boolean;
 }
 

@@ -3,22 +3,29 @@ import { SliderProps } from '../types'
 // Styles
 import '../styles.css'
 
+/** Component props. */
 interface MultiRangeSliderProps extends SliderProps {
   /** Starting minium value set on the slider. */
   minValue: number;
   /** Starting maximum value set on the slider. */
   maxValue: number;
-  /** Minimum difference between minimum and maximum values set. */
+  /** Minimum difference between minimum and maximum values set. Default to 0. */
   margin?: number;
-  /** Callback function that will be invoked when 'actualValue' changes. */
+  /** Callback function that will be invoked when `actualValue` changes. */
   onChange: (newActualMin: number, newActualMax: number) => any;
 }
 
+/**
+ * A slider with a min and max value.
+ *
+ * @param props - Components props.
+ * @returns Component.
+ */
 const MultiRangeSlider = function (props: MultiRangeSliderProps) {
   const { defaultMinValue: defaultMin, defaultMaxValue: defaultMax, minValue, maxValue, onChange, margin = 0, showLabels = false, color = 'Green' } = props
 
   /**
-   * Returns the selected slice of the Slider, in percent from 0 to 100.
+   * Returns the selected slice of the slider, in percent from 0 to 100.
    *
    * @param value - New value set on the slider.
    * @returns Percent of the slider that need to be colored, from 0 to 100.
@@ -41,7 +48,7 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
   }
 
   /**
-   * If 'showLabels' is true, returns <div> that contains a labels with the current maximum and minimum values of the Slider.
+   * If `showLabels` is `true`, returns a `<div>` that contains a labels with the current maximum and minimum values of the slider.
    *
    * @returns Div element with labels.
    */

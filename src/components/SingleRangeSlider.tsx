@@ -3,13 +3,20 @@ import { SliderProps } from '../types'
 // Styles
 import '../styles.css'
 
+/** Component props. */
 interface SingleRangeSliderProps extends SliderProps {
   /** Starting value set on the slider. */
   actualValue: number;
-  /** Callback function that will be invoked when 'actualValue' changes. */
+  /** Callback function that will be invoked when `actualValue` changes. */
   onChange: (newActualValue: number) => any;
 }
 
+/**
+ * A single slider.
+ *
+ * @param props - Component props.
+ * @returns Component.
+ */
 const SingleRangeSlider = function (props: SingleRangeSliderProps) {
   const { defaultMinValue, defaultMaxValue, actualValue, color = 'Green', showLabels = false, onChange } = props
 
@@ -25,7 +32,7 @@ const SingleRangeSlider = function (props: SingleRangeSliderProps) {
   }
 
   /**
-   * Returns the selected slice of the Slider, in percent from 0 to 100.
+   * Returns the selected slice of the slider, in percent from 0 to 100.
    *
    * @param newValue - New value set on the slider.
    * @returns Percent of the slider that need to be colored, from 0 to 100.
@@ -35,11 +42,12 @@ const SingleRangeSlider = function (props: SingleRangeSliderProps) {
   }
 
   /**
-   * If 'showLabels' is true, returns <div> that contains a label with the current value of the Slider.
+   * If `showLabels` is `true`, returns a `<div>` that contains a label with the current value of the slider.
    *
    * @returns Div with label.
    */
   const renderLabels = () => {
+    // TODO: refactor to just return the div
     if (showLabels) {
       return (
         <>
