@@ -1,21 +1,47 @@
 {
-  "name": "my-app",
+  "name": "neo-react-semantic-ui-range",
   "version": "0.1.0",
-  "private": true,
+  "description": "A modern Semantic/Fomantic UI Slider component for React",
+  "scripts": {
+    "build": "del 'dist/*' && npx tsc",
+    "lint": "eslint ./src/**/*.{ts,tsx,js}",
+    "upload": "npm run build && npm publish"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "author": "JWare Solutions <jware.organization@gmail.com>",
+  "contributors": [
+    {
+      "name": "Ramiro Federico Lasorta"
+    }
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jware-solutions/neo-react-semantic-ui-range"
+  },
+  "keywords": [
+    "Slider",
+    "Range slider",
+    "Semantic-UI",
+    "Fomantic-UI"
+  ],
+  "bugs": {
+    "url": "https://github.com/jware-solutions/neo-react-semantic-ui-range/issues"
+  },
   "dependencies": {
     "@types/node": "^12.20.19",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.9",
+    "del-cli": "^4.0.1",
     "jsdoc": "^3.6.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "typescript": "^4.3.5"
-  },
-  "scripts": {
-    "build": "del 'dist/*' && tsc",
-    "lint": "eslint ./src/**/*.{ts,tsx,js}",
-    "upload": "npm run build && npm publish"
   },
   "eslintConfig": {
     "extends": [
