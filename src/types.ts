@@ -1,3 +1,4 @@
+/** Allowed colors. */
 type RangeColor =
     'AliceBlue' |
     'AntiqueWhite' |
@@ -140,4 +141,15 @@ type RangeColor =
     'Yellow' |
     'YellowGreen';
 
-export type { RangeColor }
+interface SliderProps {
+    /** Minimum value that can be set on the slider. */
+    defaultMinValue: number;
+    /** Maximum value that can be set on the slider. */
+    defaultMaxValue: number;
+    /** Color of the selected slice of the slider. */
+    color?: RangeColor;
+    /** Indicates if minimum/maximum values labels should be shown. */
+    showLabels?: boolean;
+}
+
+export type { RangeColor, SliderProps }
