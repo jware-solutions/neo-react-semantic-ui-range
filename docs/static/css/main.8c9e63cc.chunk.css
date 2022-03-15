@@ -87,12 +87,8 @@
   position: absolute;
 }
 
-.slider__left-value {
-  left: 6px;
-}
-
 .slider__right-value {
-  right: -4px;
+  right: 0;
 }
 
-/*# sourceMappingURL=main.ed2e1e29.chunk.css.map*/
+/*# sourceMappingURL=main.8c9e63cc.chunk.css.map*/
