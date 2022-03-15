@@ -5,10 +5,10 @@ import '../styles.css'
 
 /** Component props. */
 interface SingleRangeSliderProps extends SliderProps {
-  /** Starting value set on the slider. */
-  actualValue: number;
-  /** Callback function that will be invoked when `actualValue` changes. */
-  onChange: (newActualValue: number) => any;
+  /** The value set on the slider. */
+  value: number;
+  /** Callback function that will be invoked when `value` changes. */
+  onChange: (newValue: number) => any;
 }
 
 /**
@@ -18,7 +18,7 @@ interface SingleRangeSliderProps extends SliderProps {
  * @returns Component.
  */
 const SingleRangeSlider = function (props: SingleRangeSliderProps) {
-  const { defaultMinValue, defaultMaxValue, actualValue, color = 'Green', showLabels = false, onChange } = props
+  const { defaultMinValue, defaultMaxValue, value, color = 'Green', showLabels = false, onChange } = props
 
   /**
    * Invokes callback function if slider value is updated.
@@ -47,17 +47,12 @@ const SingleRangeSlider = function (props: SingleRangeSliderProps) {
    * @returns Div with label.
    */
   const renderLabels = () => {
-    // TODO: refactor to just return the div
     if (showLabels) {
-      return (
-        <>
-          <div className="slider__left-value">{actualValue}</div>
-        </>
-      )
+      return <div className="slider__left-value">{value}</div>
     }
   }
 
-  const selectedPercent = `${getSelectedSliderPercent(actualValue)}%`
+  const selectedPercent = `${getSelectedSliderPercent(value)}%`
 
   return (
     <>
@@ -65,7 +60,7 @@ const SingleRangeSlider = function (props: SingleRangeSliderProps) {
         type="range"
         min={defaultMinValue}
         max={defaultMaxValue}
-        value={actualValue}
+        value={value}
         onChange={(event) => {
           handleValueChange(parseInt(event.target.value))
         }}

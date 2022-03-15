@@ -5,14 +5,14 @@ import '../styles.css'
 
 /** Component props. */
 interface MultiRangeSliderProps extends SliderProps {
-  /** Starting minium value set on the slider. */
+  /** The minimum value set on the slider. */
   minValue: number;
-  /** Starting maximum value set on the slider. */
+  /** The maximum value set on the slider. */
   maxValue: number;
   /** Minimum difference between minimum and maximum values set. Default to 0. */
   margin?: number;
-  /** Callback function that will be invoked when `actualValue` changes. */
-  onChange: (newActualMin: number, newActualMax: number) => any;
+  /** Callback function that will be invoked when `minValue` or `maxValue` change. */
+  onChange: (newMinValue: number, newMaxValue: number) => any;
 }
 
 /**
@@ -22,7 +22,16 @@ interface MultiRangeSliderProps extends SliderProps {
  * @returns Component.
  */
 const MultiRangeSlider = function (props: MultiRangeSliderProps) {
-  const { defaultMinValue: defaultMin, defaultMaxValue: defaultMax, minValue, maxValue, onChange, margin = 0, showLabels = false, color = 'Green' } = props
+  const {
+    defaultMinValue,
+    defaultMaxValue,
+    minValue,
+    maxValue,
+    onChange,
+    margin = 0,
+    showLabels = false,
+    color = 'Green'
+  } = props
 
   /**
    * Returns the selected slice of the slider, in percent from 0 to 100.
@@ -31,7 +40,7 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
    * @returns Percent of the slider that need to be colored, from 0 to 100.
    */
   const getPercent = (value: number) => {
-    return Math.round(((value - defaultMin) / (defaultMax - defaultMin)) * 100)
+    return Math.round(((value - defaultMinValue) / (defaultMaxValue - defaultMinValue)) * 100)
   }
 
   /**
@@ -71,8 +80,8 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
     <>
       <input
         type="range"
-        min={defaultMin}
-        max={defaultMax}
+        min={defaultMinValue}
+        max={defaultMaxValue}
         value={minValue}
         onChange={(event) => {
           handleChange(parseInt(event.target.value), maxValue)
@@ -81,8 +90,8 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
       />
       <input
         type="range"
-        min={defaultMin}
-        max={defaultMax}
+        min={defaultMinValue}
+        max={defaultMaxValue}
         value={maxValue}
         onChange={(event) => {
           handleChange(minValue, parseInt(event.target.value))
