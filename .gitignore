@@ -3,3 +3,6 @@
 
 # Production
 /dist
+
+# Storybook
+/docs-build

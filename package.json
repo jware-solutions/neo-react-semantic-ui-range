@@ -7,7 +7,7 @@
     "lint": "eslint ./src/**/*.{ts,tsx,js}",
     "upload": "npm run build && npm publish",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -o docs-build"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
