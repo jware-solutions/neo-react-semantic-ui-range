@@ -5,7 +5,9 @@
   "scripts": {
     "build": "del 'dist/*' && npx tsc",
     "lint": "eslint ./src/**/*.{ts,tsx,js}",
-    "upload": "npm run build && npm publish"
+    "upload": "npm run build && npm publish",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -47,6 +49,16 @@
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "browserslist": {
@@ -62,6 +74,15 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.4.19",
+    "@storybook/addon-essentials": "^6.4.19",
+    "@storybook/addon-interactions": "^6.4.19",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/api": "^6.4.19",
+    "@storybook/node-logger": "^6.4.19",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.4.19",
+    "@storybook/testing-library": "^0.0.9",
     "@typescript-eslint/eslint-plugin": "^5.5.0",
     "@typescript-eslint/parser": "^5.5.0",
     "eslint": "^7.32.0",
@@ -71,6 +92,7 @@
     "eslint-plugin-jsdoc": "^37.0.3",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.1",
-    "eslint-plugin-react": "^7.27.1"
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-storybook": "^0.5.7"
   }
 }

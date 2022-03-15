@@ -99,3 +99,4 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
 }
 
 export { MultiRangeSlider }
+export type { MultiRangeSliderProps }

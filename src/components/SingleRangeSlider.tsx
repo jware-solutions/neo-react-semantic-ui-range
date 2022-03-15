@@ -81,3 +81,4 @@ const SingleRangeSlider = function (props: SingleRangeSliderProps) {
 }
 
 export { SingleRangeSlider }
+export type { SingleRangeSliderProps }
