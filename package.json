@@ -14,12 +14,8 @@
   "files": [
     "/dist"
   ],
-  "author": "JWare Solutions <jware.organization@gmail.com>",
-  "contributors": [
-    {
-      "name": "Ramiro Federico Lasorta"
-    }
-  ],
+  "author": "Ramiro Federico Lasorsa <ramiroflasorsa@gmail.com>",
+  "contributors": ["JWare Solutions <jware.organization@gmail.com>"],
   "license": "MIT",
   "repository": {
     "type": "git",
