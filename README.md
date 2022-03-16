@@ -1,53 +1,100 @@
-# Getting Started with Create React App
+# neo-react-semantic-ui-range
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Build and Deploy](https://github.com/jware-solutions/neo-react-semantic-ui-range/actions/workflows/storybook.yml/badge.svg)](https://github.com/jware-solutions/neo-react-semantic-ui-range/actions/workflows/storybook.yml)
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+A modern single a multi React Slider to use with [Semantic-UI][semantic-ui] or [Fomantic-UI][fomantic-ui].
 
 
-## TODO
+![Slider example with multiple colors](./assets/colors.png)
 
-- [X] Add storybook
-- [] Add `homepage` attribute to `package.json` to the storybook URL
-- [] Add a new README
+
+## Installation
+
+```
+npm i neo-react-semantic-ui-range
+
+# Or
+
+yarn add neo-react-semantic-ui-range
+```
+
+
+## Usage
+
+Here are some basic examples, **but you can play with all the parameters in the [official Storybook][storybook]**.
+
+### Single slider
+
+```tsx
+import { SingleRangeSlider } from 'neo-react-semantic-ui-range'
+
+const MySingleSlider = (props) => {
+	const [value, setValue] = useState<number>(45.5)
+
+	/**
+	 * Handles changes.
+	 *
+	 * @param newValue - New value.
+	 */
+	function handleChange (newValue: number) {
+		setValue(newValue)
+	}
+
+	return <SingleRangeSlider
+		value={value}
+		defaultMinValue={0}
+		defaultMaxValue={100}
+		color='blue'
+		onChange={handleChange}
+	/>
+}
+```
+
+
+### Multi range slider
+
+```tsx
+import { MultiRangeSlider } from 'neo-react-semantic-ui-range'
+
+const MyMultiRangeSlider = (props) => {
+	const [minValue, setMinValue] = useState<number>(30)
+  	const [maxValue, setMaxValue] = useState<number>(60)
+
+	/**
+	 * Handles changes.
+	 *
+	 * @param newActualMin - New min value.
+	 * @param newActualMax - New max value.
+	 */
+	function handleChange (newActualMin: number, newActualMax: number) {
+		setMinValue(newActualMin)
+		setMaxValue(newActualMax)
+	}
+
+	return <MultiRangeSlider
+		minValue={minValue}
+		maxValue={maxValue}
+		defaultMinValue={0}
+		defaultMaxValue={100}
+		color='green'
+		onChange={handleChange}
+	/>
+}
+```
+
+
+## Features
+
+- 🚀 Written in modern React using hooks and clean 
+- ✨ Fully Typescript support
+- 📖 A lot of colors and StoryBook
+
+
+## License
+
+This repository is distributed under the terms of the MIT license.
+
+
+[semantic-ui]: https://react.semantic-ui.com/
+[fomantic-ui]: https://fomantic-ui.com/
+[storybook]: https://jware-solutions.github.io/neo-react-semantic-ui-range/
