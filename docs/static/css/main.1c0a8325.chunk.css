@@ -90,5 +90,10 @@
 .slider__right-value {
   right: 0;
 }
+/* Allows to show multiple sliders */
+div#root {
+	display: grid;
+}
 
-/*# sourceMappingURL=main.8c9e63cc.chunk.css.map*/
+
+/*# sourceMappingURL=main.1c0a8325.chunk.css.map*/
