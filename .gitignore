@@ -5,4 +5,5 @@
 /dist
 
 # Storybook
+/docs
 /docs-build
