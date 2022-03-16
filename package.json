@@ -30,6 +30,7 @@
   "bugs": {
     "url": "https://github.com/jware-solutions/neo-react-semantic-ui-range/issues"
   },
+  "homepage": "https://jware-solutions.github.io/neo-react-semantic-ui-range/",
   "dependencies": {
     "@types/node": "^12.20.19",
     "@types/react": "^17.0.39",
