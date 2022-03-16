@@ -1,0 +1,4 @@
+/* Allows to show multiple sliders */
+div#root {
+	display: grid;
+}
