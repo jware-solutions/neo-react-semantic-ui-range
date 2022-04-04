@@ -51,22 +51,8 @@
   z-index: 4;
 }
 
-/* For Chrome browsers */
-.thumb::-webkit-slider-thumb {
-  background-color: #f1f5f7;
-  border: none;
-  border-radius: 50%;
-  box-shadow: 0 0 1px 1px #ced4da;
-  cursor: pointer;
-  height: 18px;
-  width: 18px;
-  margin-top: 4px;
-  pointer-events: all;
-  position: relative;
-}
-
-/* For Firefox browsers */
-.thumb::-moz-range-thumb {
+/* For Chrome and Firefox browsers */
+.thumb::-webkit-slider-thumb, .thumb::-moz-range-thumb {
   background-color: #f1f5f7;
   border: none;
   border-radius: 50%;
@@ -90,10 +76,22 @@
 .slider__right-value {
   right: 0;
 }
+
+.thumb.disabled::-webkit-slider-thumb,
+.thumb.disabled::-moz-range-thumb {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.slider__range.disabled, .slider__track.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
 /* Allows to show multiple sliders */
 div#root {
 	display: grid;
 }
 
 
-/*# sourceMappingURL=main.1c0a8325.chunk.css.map*/
+/*# sourceMappingURL=main.5fa164f3.chunk.css.map*/
