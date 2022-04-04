@@ -44,6 +44,7 @@ const MySingleSlider = (props) => {
 		value={value}
 		defaultMinValue={0}
 		defaultMaxValue={100}
+		step={0.5}
 		color='blue'
 		onChange={handleChange}
 	/>
@@ -76,6 +77,7 @@ const MyMultiRangeSlider = (props) => {
 		maxValue={maxValue}
 		defaultMinValue={0}
 		defaultMaxValue={100}
+		margin={1}
 		color='green'
 		onChange={handleChange}
 	/>
