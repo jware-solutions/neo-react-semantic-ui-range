@@ -1,3 +1,6 @@
+// Components
+import { SliderTracks } from './SliderTracks'
+
 // Utils
 import { decimalCount } from '../utils/utils'
 
@@ -80,11 +83,10 @@ const SingleRangeSlider = function (props: SingleRangeSliderProps) {
         }}
         className={`thumb thumb--left ${disabledClass}`}
       />
-      <div className="slider">
-        <div className={`slider__track ${disabledClass}`} />
+
+      <SliderTracks width={selectedPercent} backgroundColor={color} disabled={disabled}>
         {renderLabels()}
-        <div style={{ width: selectedPercent, backgroundColor: color }} className={`slider__range ${disabledClass}`} />
-      </div>
+      </SliderTracks>
     </>
   )
 }

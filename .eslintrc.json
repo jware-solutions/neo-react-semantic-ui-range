@@ -4,6 +4,9 @@
         "es2021": true,
         "node": true
     },
+    "globals": {
+        "JSX": true
+    },
     "extends": [
         "standard",
         "standard-jsdoc/ts",

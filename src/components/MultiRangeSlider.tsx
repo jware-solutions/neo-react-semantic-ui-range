@@ -1,3 +1,6 @@
+// Components
+import { SliderTracks } from './SliderTracks'
+
 // Utils
 import { decimalCount } from '../utils/utils'
 
@@ -108,12 +111,14 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
         className={`thumb thumb--right ${disabledClass}`}
       />
 
-      {/* TODO: refactor, it's repeated in SingleRangeSlider */}
-      <div className="slider">
-        <div className={`slider__track ${disabledClass}`} />
+      <SliderTracks
+        left={left}
+        width={width}
+        backgroundColor={color}
+        disabled={disabled}
+      >
         {renderLabels()}
-        <div style={{ left: left, width: width, backgroundColor: color }} className={`slider__range ${disabledClass}`} />
-      </div>
+      </SliderTracks>
     </>
   )
 }
