@@ -34,6 +34,7 @@ export const Basic = Template.bind({})
 Basic.args = {
   showLabels: true,
   value: 40,
+  step: 1,
   defaultMinValue: 0,
   defaultMaxValue: 100,
   color: 'Salmon'

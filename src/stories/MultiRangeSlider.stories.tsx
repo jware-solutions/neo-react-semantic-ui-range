@@ -40,9 +40,11 @@ const Template: ComponentStory<typeof MultiRangeSlider> = (args: MultiRangeSlide
 export const Basic = Template.bind({})
 Basic.args = {
   showLabels: true,
+  step: 1,
   minValue: 30,
   maxValue: 70,
   defaultMinValue: 0,
   defaultMaxValue: 100,
+  margin: 0,
   color: 'Orange'
 }

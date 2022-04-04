@@ -150,6 +150,8 @@ interface SliderProps {
     color?: RangeColor;
     /** Indicates if minimum/maximum values labels should be shown. Default to `false`. */
     showLabels?: boolean;
+    /** Step to change slider value. Default to 1. */
+    step?: number;
 }
 
 export type { RangeColor, SliderProps }

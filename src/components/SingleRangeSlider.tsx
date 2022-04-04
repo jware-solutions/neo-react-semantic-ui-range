@@ -1,3 +1,7 @@
+// Utils
+import { decimalCount } from '../utils/utils'
+
+// Types
 import { SliderProps } from '../types'
 
 // Styles
@@ -18,7 +22,7 @@ interface SingleRangeSliderProps extends SliderProps {
  * @returns Component.
  */
 const SingleRangeSlider = function (props: SingleRangeSliderProps) {
-  const { defaultMinValue, defaultMaxValue, value, color = 'Green', showLabels = false, onChange } = props
+  const { defaultMinValue, defaultMaxValue, value, color = 'Green', showLabels = false, step = 1, onChange } = props
 
   /**
    * Invokes callback function if slider value is updated.
@@ -37,9 +41,7 @@ const SingleRangeSlider = function (props: SingleRangeSliderProps) {
    * @param newValue - New value set on the slider.
    * @returns Percent of the slider that need to be colored, from 0 to 100.
    */
-  const getSelectedSliderPercent = (newValue: number) => {
-    return (newValue / defaultMaxValue) * 100
-  }
+  const getSelectedSliderPercent = (newValue: number) => newValue / defaultMaxValue * 100
 
   /**
    * If `showLabels` is `true`, returns a `<div>` that contains a label with the current value of the slider.
@@ -47,8 +49,8 @@ const SingleRangeSlider = function (props: SingleRangeSliderProps) {
    * @returns Div with label.
    */
   const renderLabels = () => {
-    if (showLabels) {
-      return <div className="slider__left-value">{value}</div>
+    if (showLabels && value !== undefined) {
+      return <div className="slider__left-value">{value.toFixed(decimalCount(step))}</div>
     }
   }
 
@@ -61,8 +63,9 @@ const SingleRangeSlider = function (props: SingleRangeSliderProps) {
         min={defaultMinValue}
         max={defaultMaxValue}
         value={value}
+        step={step}
         onChange={(event) => {
-          handleValueChange(parseInt(event.target.value))
+          handleValueChange(parseFloat(event.target.value))
         }}
         className="thumb thumb--left"
       />

@@ -1,3 +1,7 @@
+// Utils
+import { decimalCount } from '../utils/utils'
+
+// Types
 import { SliderProps } from '../types'
 
 // Styles
@@ -25,6 +29,7 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
   const {
     defaultMinValue,
     defaultMaxValue,
+    step = 1,
     minValue,
     maxValue,
     onChange,
@@ -39,9 +44,7 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
    * @param value - New value set on the slider.
    * @returns Percent of the slider that need to be colored, from 0 to 100.
    */
-  const getPercent = (value: number) => {
-    return Math.round(((value - defaultMinValue) / (defaultMaxValue - defaultMinValue)) * 100)
-  }
+  const getPercent = (value: number) => Math.round(((value - defaultMinValue) / (defaultMaxValue - defaultMinValue)) * 100)
 
   /**
    * Invokes callback function if slider value is updated.
@@ -62,11 +65,11 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
    * @returns Div element with labels.
    */
   const renderLabels = () => {
-    if (showLabels) {
+    if (showLabels && minValue !== undefined && maxValue !== undefined) {
       return (
         <>
-          <div className="slider__left-value">{minValue}</div>
-          <div className="slider__right-value">{maxValue}</div>
+          <div className="slider__left-value">{minValue.toFixed(decimalCount(step))}</div>
+          <div className="slider__right-value">{maxValue.toFixed(decimalCount(step))}</div>
         </>
       )
     }
@@ -84,17 +87,18 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
         max={defaultMaxValue}
         value={minValue}
         onChange={(event) => {
-          handleChange(parseInt(event.target.value), maxValue)
+          handleChange(parseFloat(event.target.value), maxValue)
         }}
         className="thumb thumb--left"
       />
       <input
         type="range"
+        step={step}
         min={defaultMinValue}
         max={defaultMaxValue}
         value={maxValue}
         onChange={(event) => {
-          handleChange(minValue, parseInt(event.target.value))
+          handleChange(minValue, parseFloat(event.target.value))
         }}
         className="thumb thumb--right"
       />
