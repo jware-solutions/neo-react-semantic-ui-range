@@ -35,6 +35,7 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
     onChange,
     margin = 0,
     showLabels = false,
+    disabled = false,
     color = 'Green'
   } = props
 
@@ -79,6 +80,8 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
   const maxPercent = getPercent(maxValue)
   const left = `${minPercent}%`
   const width = `${maxPercent - minPercent}%`
+  const disabledClass = disabled ? 'disabled' : ''
+
   return (
     <>
       <input
@@ -86,10 +89,11 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
         min={defaultMinValue}
         max={defaultMaxValue}
         value={minValue}
+        disabled={disabled}
         onChange={(event) => {
           handleChange(parseFloat(event.target.value), maxValue)
         }}
-        className="thumb thumb--left"
+        className={`thumb thumb--left ${disabledClass}`}
       />
       <input
         type="range"
@@ -97,15 +101,18 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
         min={defaultMinValue}
         max={defaultMaxValue}
         value={maxValue}
+        disabled={disabled}
         onChange={(event) => {
           handleChange(minValue, parseFloat(event.target.value))
         }}
-        className="thumb thumb--right"
+        className={`thumb thumb--right ${disabledClass}`}
       />
+
+      {/* TODO: refactor, it's repeated in SingleRangeSlider */}
       <div className="slider">
-        <div className="slider__track" />
+        <div className={`slider__track ${disabledClass}`} />
         {renderLabels()}
-        <div style={{ left: left, width: width, backgroundColor: color }} className={'slider__range'} />
+        <div style={{ left: left, width: width, backgroundColor: color }} className={`slider__range ${disabledClass}`} />
       </div>
     </>
   )

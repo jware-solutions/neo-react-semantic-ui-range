@@ -46,5 +46,6 @@ Basic.args = {
   defaultMinValue: 0,
   defaultMaxValue: 100,
   margin: 0,
+  disabled: false,
   color: 'Orange'
 }

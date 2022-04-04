@@ -152,6 +152,8 @@ interface SliderProps {
     showLabels?: boolean;
     /** Step to change slider value. Default to 1. */
     step?: number;
+    /** Disables slider and prevents changes.  Default to `false`. */
+    disabled?: boolean;
 }
 
 export type { RangeColor, SliderProps }

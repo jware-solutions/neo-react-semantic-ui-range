@@ -37,5 +37,6 @@ Basic.args = {
   step: 1,
   defaultMinValue: 0,
   defaultMaxValue: 100,
+  disabled: false,
   color: 'Salmon'
 }

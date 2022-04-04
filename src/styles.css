@@ -76,3 +76,14 @@
 .slider__right-value {
   right: 0;
 }
+
+.thumb.disabled::-webkit-slider-thumb,
+.thumb.disabled::-moz-range-thumb {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.slider__range.disabled, .slider__track.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}

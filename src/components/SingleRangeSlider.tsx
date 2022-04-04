@@ -22,7 +22,16 @@ interface SingleRangeSliderProps extends SliderProps {
  * @returns Component.
  */
 const SingleRangeSlider = function (props: SingleRangeSliderProps) {
-  const { defaultMinValue, defaultMaxValue, value, color = 'Green', showLabels = false, step = 1, onChange } = props
+  const {
+    defaultMinValue,
+    defaultMaxValue,
+    value,
+    color = 'Green',
+    showLabels = false,
+    step = 1,
+    disabled = false,
+    onChange
+  } = props
 
   /**
    * Invokes callback function if slider value is updated.
@@ -55,6 +64,7 @@ const SingleRangeSlider = function (props: SingleRangeSliderProps) {
   }
 
   const selectedPercent = `${getSelectedSliderPercent(value)}%`
+  const disabledClass = disabled ? 'disabled' : ''
 
   return (
     <>
@@ -64,15 +74,16 @@ const SingleRangeSlider = function (props: SingleRangeSliderProps) {
         max={defaultMaxValue}
         value={value}
         step={step}
+        disabled={disabled}
         onChange={(event) => {
           handleValueChange(parseFloat(event.target.value))
         }}
-        className="thumb thumb--left"
+        className={`thumb thumb--left ${disabledClass}`}
       />
       <div className="slider">
-        <div className="slider__track" />
+        <div className={`slider__track ${disabledClass}`} />
         {renderLabels()}
-        <div style={{ width: selectedPercent, backgroundColor: color }} className={'slider__range'} />
+        <div style={{ width: selectedPercent, backgroundColor: color }} className={`slider__range ${disabledClass}`} />
       </div>
     </>
   )
