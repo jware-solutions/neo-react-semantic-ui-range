@@ -1,6 +1,6 @@
 {
   "name": "neo-react-semantic-ui-range",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A modern Semantic/Fomantic UI Slider component for React",
   "scripts": {
     "build": "del 'dist/*' && npx tsc",
