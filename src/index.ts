@@ -1,9 +1,5 @@
-export { SingleRangeSlider } from './components/SingleRangeSlider'
+export * from './types'
 
-export { MultiRangeSlider } from './components/MultiRangeSlider'
+export * from './components/SingleRangeSlider'
 
-export type { RangeColor } from './types'
-
-export type { SingleRangeSliderProps } from './components/SingleRangeSlider'
-
-export type { MultiRangeSliderProps } from './components/MultiRangeSlider'
+export * from './components/MultiRangeSlider'
