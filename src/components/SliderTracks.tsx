@@ -3,7 +3,7 @@ import { RangeColor } from '../types'
 /** Component props. */
 interface SliderTracksProps {
   /** Labels component. */
-  children: JSX.Element;
+  children: JSX.Element | undefined;
   /** Left offset. */
   left?: string;
   /** Track width. */
