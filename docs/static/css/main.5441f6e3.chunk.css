@@ -1,0 +1,216 @@
+.slider {
+  position: relative;
+  width: 200px;
+}
+
+.slider__track,
+.slider__range {
+  border-radius: 3px;
+  height: 5px;
+  position: absolute;
+}
+
+.slider__range {
+  z-index: 2;
+}
+
+.slider__track {
+  background-color: rgba(0, 0, 0, 0.05);
+  width: 100%;
+  z-index: 1;
+}
+
+/* Removing the default appearance */
+.thumb,
+.thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.thumb {
+  pointer-events: none;
+  position: absolute;
+  height: 0;
+  width: 200px;
+  outline: none;
+}
+
+.thumb--left {
+  z-index: 3;
+}
+
+.thumb--right {
+  z-index: 4;
+}
+
+/* For Chrome and Firefox browsers */
+.thumb::-webkit-slider-thumb,
+.thumb::-moz-range-thumb {
+  background-color: #f1f5f7;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 1px 1px #ced4da;
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}
+
+.slider__left-value,
+.slider__right-value {
+  color: #6c6c6c;
+  font-size: 12px;
+  margin-top: 20px;
+  position: absolute;
+}
+
+.slider.inverted .slider__left-value,
+.slider.inverted .slider__right-value {
+  color: #dee2e6;
+}
+
+.slider__right-value {
+  right: 0;
+}
+
+.thumb.disabled::-webkit-slider-thumb,
+.thumb.disabled::-moz-range-thumb {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.slider__range.disabled,
+.slider__track.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Colors */
+.slider__track.inverted {
+  background-color: #e2e2e2;
+}
+
+.color_track.red {
+  background-color: #DB2828;
+}
+
+.color_track.inverted-red {
+  background-color: #FF695E;
+}
+
+/* Orange */
+.color_track.orange {
+  background-color: #F2711C;
+}
+
+.color_track.inverted-orange {
+  background-color: #FF851B;
+}
+
+/* Yellow */
+.color_track.yellow {
+  background-color: #FBBD08;
+}
+
+.color_track.inverted-yellow {
+  background-color: #FFE21F;
+}
+
+/* Olive */
+.color_track.olive {
+  background-color: #B5CC18;
+}
+
+.color_track.inverted-olive {
+  background-color: #D9E778;
+}
+
+/* Green */
+.color_track.green {
+  background-color: #21BA45;
+}
+
+.color_track.inverted-green {
+  background-color: #2ECC40;
+}
+
+/* Teal */
+.color_track.teal {
+  background-color: #00B5AD;
+}
+
+.color_track.inverted-teal {
+  background-color: #6DFFFF;
+}
+
+/* Blue */
+.color_track.blue {
+  background-color: #2185D0;
+}
+
+.color_track.inverted-blue {
+  background-color: #54C8FF;
+}
+
+/* Violet */
+.color_track.violet {
+  background-color: #6435C9;
+}
+
+.color_track.inverted-violet {
+  background-color: #A291FB;
+}
+
+/* Purple */
+.color_track.purple {
+  background-color: #A333C8;
+}
+
+.color_track.inverted-purple {
+  background-color: #DC73FF;
+}
+
+/* Pink */
+.color_track.pink {
+  background-color: #E03997;
+}
+
+.color_track.inverted-pink {
+  background-color: #FF8EDF;
+}
+
+/* Brown */
+.color_track.brown {
+  background-color: #A5673F;
+}
+
+.color_track.inverted-brown {
+  background-color: #D67C1C;
+}
+
+/* Grey */
+.color_track.grey {
+  background-color: #767676;
+}
+
+.color_track.inverted-grey {
+  background-color: #DCDDDE;
+}
+
+/* Black */
+.color_track.black {
+  background-color: #1b1c1d;
+}
+
+.color_track.inverted-black {
+  background-color: #545454;
+}
+/* Allows to show multiple sliders */
+div#root {
+	display: grid;
+}
+
+
+/*# sourceMappingURL=main.5441f6e3.chunk.css.map*/
