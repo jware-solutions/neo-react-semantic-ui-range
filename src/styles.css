@@ -15,7 +15,7 @@
 }
 
 .slider__track {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.15);
   width: 100%;
   z-index: 1;
 }
