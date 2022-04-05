@@ -29,10 +29,11 @@ const SingleRangeSlider = function (props: SingleRangeSliderProps) {
     defaultMinValue,
     defaultMaxValue,
     value,
-    color = 'Green',
+    color = 'green',
     showLabels = false,
     step = 1,
     disabled = false,
+    inverted = false,
     onChange
   } = props
 
@@ -84,7 +85,7 @@ const SingleRangeSlider = function (props: SingleRangeSliderProps) {
         className={`thumb thumb--left ${disabledClass}`}
       />
 
-      <SliderTracks width={selectedPercent} backgroundColor={color} disabled={disabled}>
+      <SliderTracks width={selectedPercent} color={color} disabled={disabled} inverted={inverted}>
         {renderLabels()}
       </SliderTracks>
     </>

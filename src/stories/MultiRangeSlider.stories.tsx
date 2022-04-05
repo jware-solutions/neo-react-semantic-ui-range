@@ -6,7 +6,10 @@ export default {
   title: 'Example/MultiSlider',
   component: MultiRangeSlider,
   parameters: {
-    layout: 'centered'
+    layout: 'centered',
+    backgrounds: {
+      default: 'dark'
+    }
   }
 } as ComponentMeta<typeof MultiRangeSlider >
 
@@ -47,5 +50,6 @@ Basic.args = {
   defaultMaxValue: 100,
   margin: 0,
   disabled: false,
-  color: 'Orange'
+  inverted: true,
+  color: 'orange'
 }

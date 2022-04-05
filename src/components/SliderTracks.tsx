@@ -1,3 +1,5 @@
+import { RangeColor } from '../types'
+
 /** Component props. */
 interface SliderTracksProps {
   /** Labels component. */
@@ -7,9 +9,11 @@ interface SliderTracksProps {
   /** Track width. */
   width: string;
   /** Track color. */
-  backgroundColor: string;
+  color: RangeColor;
   /** Disabled prop. */
   disabled: boolean;
+  /** Inverted prop. */
+  inverted: boolean;
 }
 
 /**
@@ -20,12 +24,17 @@ interface SliderTracksProps {
  */
 const SliderTracks = (props: SliderTracksProps) => {
   const disabledClass = props.disabled ? 'disabled' : ''
+  const invertedClass = props.inverted ? 'inverted' : ''
+  const colorClass = props.inverted ? `${invertedClass}-${props.color}` : props.color
 
   return (
-    <div className="slider">
-        <div className={`slider__track ${disabledClass}`} />
+    <div className={`slider ${invertedClass}`}>
+        <div className={`slider__track ${disabledClass} ${invertedClass}`} />
         {props.children}
-        <div style={{ left: props.left, width: props.width, backgroundColor: props.backgroundColor }} className={`slider__range ${disabledClass}`} />
+        <div
+          style={{ left: props.left, width: props.width }}
+          className={`color_track slider__range ${disabledClass} ${colorClass}`}
+        />
     </div>
   )
 }

@@ -39,7 +39,8 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
     margin = 0,
     showLabels = false,
     disabled = false,
-    color = 'Green'
+    inverted = false,
+    color = 'green'
   } = props
 
   /**
@@ -114,8 +115,9 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
       <SliderTracks
         left={left}
         width={width}
-        backgroundColor={color}
+        color={color}
         disabled={disabled}
+        inverted={inverted}
       >
         {renderLabels()}
       </SliderTracks>
