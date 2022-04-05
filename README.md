@@ -4,6 +4,8 @@
 
 A modern single a multi React Slider to use with [Semantic-UI][semantic-ui] or [Fomantic-UI][fomantic-ui].
 
+**IMPORTANT**: although the library mentions Semantic UI/Fomantic UI. It is not necessary to install this dependency. This library contains the needed styles to fit as well as possible with that framework, but you can use it in any desired environment. 
+
 
 ![Slider example with multiple colors](./assets/colors.png)
 
