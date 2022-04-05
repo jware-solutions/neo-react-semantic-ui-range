@@ -15,7 +15,7 @@
 }
 
 .slider__track {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.15);
   width: 100%;
   z-index: 1;
 }
@@ -213,4 +213,4 @@ div#root {
 }
 
 
-/*# sourceMappingURL=main.5441f6e3.chunk.css.map*/
+/*# sourceMappingURL=main.04213ca1.chunk.css.map*/
