@@ -7,15 +7,18 @@ import { RangeColor } from '../types'
 import './colors.css'
 
 export default {
-  title: 'Example/SingleSlider/Colors',
+  title: 'Example/SingleSlider/Inverted',
   component: SingleRangeSlider,
   subcomponents: { SingleRangeSlider },
   parameters: {
-    layout: 'centered'
+    layout: 'centered',
+    backgrounds: {
+      default: 'dark'
+    }
   }
 } as ComponentMeta<typeof SingleRangeSlider >
 
-export const Colors = () => {
+export const Inverted = () => {
   const [value, setValue] = useState<number>(40)
 
   /**
@@ -36,6 +39,7 @@ export const Colors = () => {
         defaultMaxValue={100}
         value={value}
         color={color}
+        inverted={true}
         onChange={handleChange}
       />
     </h1>

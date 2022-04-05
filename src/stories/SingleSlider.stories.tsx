@@ -6,7 +6,10 @@ export default {
   title: 'Example/SingleSlider',
   component: SingleRangeSlider,
   parameters: {
-    layout: 'centered'
+    layout: 'centered',
+    backgrounds: {
+      default: 'dark'
+    }
   }
 } as ComponentMeta<typeof SingleRangeSlider >
 
@@ -37,5 +40,7 @@ Basic.args = {
   step: 1,
   defaultMinValue: 0,
   defaultMaxValue: 100,
-  color: 'Salmon'
+  disabled: false,
+  inverted: true,
+  color: 'orange'
 }

@@ -1,3 +1,6 @@
+// Components
+import { SliderTracks } from './SliderTracks'
+
 // Utils
 import { decimalCount } from '../utils/utils'
 
@@ -35,7 +38,9 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
     onChange,
     margin = 0,
     showLabels = false,
-    color = 'Green'
+    disabled = false,
+    inverted = false,
+    color = 'green'
   } = props
 
   /**
@@ -79,6 +84,8 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
   const maxPercent = getPercent(maxValue)
   const left = `${minPercent}%`
   const width = `${maxPercent - minPercent}%`
+  const disabledClass = disabled ? 'disabled' : ''
+
   return (
     <>
       <input
@@ -86,10 +93,11 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
         min={defaultMinValue}
         max={defaultMaxValue}
         value={minValue}
+        disabled={disabled}
         onChange={(event) => {
           handleChange(parseFloat(event.target.value), maxValue)
         }}
-        className="thumb thumb--left"
+        className={`thumb thumb--left ${disabledClass}`}
       />
       <input
         type="range"
@@ -97,16 +105,22 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
         min={defaultMinValue}
         max={defaultMaxValue}
         value={maxValue}
+        disabled={disabled}
         onChange={(event) => {
           handleChange(minValue, parseFloat(event.target.value))
         }}
-        className="thumb thumb--right"
+        className={`thumb thumb--right ${disabledClass}`}
       />
-      <div className="slider">
-        <div className="slider__track" />
+
+      <SliderTracks
+        left={left}
+        width={width}
+        color={color}
+        disabled={disabled}
+        inverted={inverted}
+      >
         {renderLabels()}
-        <div style={{ left: left, width: width, backgroundColor: color }} className={'slider__range'} />
-      </div>
+      </SliderTracks>
     </>
   )
 }
