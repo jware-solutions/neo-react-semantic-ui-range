@@ -1,9 +1,10 @@
 {
   "name": "neo-react-semantic-ui-range",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A modern Semantic/Fomantic UI Slider component for React",
   "scripts": {
-    "build": "del 'dist/*' && npx tsc",
+    "build": "del 'dist/*' && npx tsc && npm run copy-styles",
+    "copy-styles": "copyfiles -u 1 src/*.css dist/",
     "lint": "eslint ./src/**/*.{ts,tsx,js}",
     "upload": "npm run build && npm publish",
     "storybook": "start-storybook -p 6006",
@@ -15,7 +16,9 @@
     "/dist"
   ],
   "author": "Ramiro Federico Lasorsa <ramiroflasorsa@gmail.com>",
-  "contributors": ["JWare Solutions <jware.organization@gmail.com>"],
+  "contributors": [
+    "JWare Solutions <jware.organization@gmail.com>"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -82,6 +85,7 @@
     "@storybook/testing-library": "^0.0.9",
     "@typescript-eslint/eslint-plugin": "^5.5.0",
     "@typescript-eslint/parser": "^5.5.0",
+    "copyfiles": "^2.4.1",
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-config-standard-jsdoc": "^9.3.0",
