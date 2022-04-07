@@ -1,3 +1,5 @@
+import { CSSProperties } from 'react'
+
 /** Allowed colors. */
 type RangeColor = 'red' |
     'orange' |
@@ -28,6 +30,8 @@ interface SliderProps {
     disabled?: boolean;
     /** A slider can have its colors inverted for contrast on a dark background. Default to `false`. */
     inverted?: boolean;
+    /** Component custom styles. */
+    style?: CSSProperties;
 }
 
 export type { RangeColor, SliderProps }

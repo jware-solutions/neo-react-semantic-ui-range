@@ -40,7 +40,8 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
     showLabels = false,
     disabled = false,
     inverted = false,
-    color = 'green'
+    color = 'green',
+    style
   } = props
 
   /**
@@ -87,7 +88,7 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
   const disabledClass = disabled ? 'disabled' : ''
 
   return (
-    <div className='slider-parent'>
+    <div className='slider-parent' style={style}>
       <input
         type="range"
         min={defaultMinValue}

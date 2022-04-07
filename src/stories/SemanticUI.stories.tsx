@@ -117,15 +117,26 @@ export const SemanticGrid = () => {
 }
 
 export const SemanticForm = () => {
-  const [value, setValue] = useState<number>(40)
+  const [valueSingle, setValueSingle] = useState<number>(40)
+  const [[minValue, maxValue], setValuesMulti] = useState<[number, number]>([30, 80])
 
   /**
-   * Handles changes.
+   * Handles changes on single range sliders.
    *
    * @param newValue - New value.
    */
-  function handleChange (newValue: number) {
-    setValue(newValue)
+  function handleChangeOnSingle (newValue: number) {
+    setValueSingle(newValue)
+  }
+
+  /**
+   * Handles changes on multi range sliders.
+   *
+   * @param newMinValue - New min value.
+   * @param newMaxValue - New max value.
+   */
+  function handleChangeOnMulti (newMinValue: number, newMaxValue: number) {
+    setValuesMulti([newMinValue, newMaxValue])
   }
 
   return (
@@ -133,37 +144,44 @@ export const SemanticForm = () => {
       <Grid>
         <Grid.Row columns={1}>
           <Grid.Column>
+            <h2>You can use Sliders inside <a href='https://react.semantic-ui.com/collections/form/' target='_blank' rel='noreferrer'>Semantic-UI forms</a></h2>
+          </Grid.Column>
+        </Grid.Row>
+
+        <Grid.Row columns={1}>
+          <Grid.Column>
             <Form>
-              <Form.Group widths='equal'>
+              <Form.Group widths={4}>
                 <Form.Input fluid label='First name' placeholder='First name' />
                 <Form.Input fluid label='Last name' placeholder='Last name' />
               </Form.Group>
-              <Form.Group inline>
-                <label>Size</label>
-                <Form.Radio
-                  label='Small'
-                  value='sm'
-                  checked
-                />
-                <Form.Radio
-                  label='Medium'
-                  value='md'
-                />
-                <Form.Radio
-                  label='Large'
-                  value='lg'
-                />
-              </Form.Group>
               <Form.Group>
-                <SingleRangeSlider
-                  defaultMinValue={0}
-                  defaultMaxValue={100}
-                  value={value}
-                  color='red'
-                  onChange={handleChange}
-                />
+                <Form.Field width={4}>
+                  <label>Happiness</label>
+                  <SingleRangeSlider
+                    style={{ marginTop: '5%', marginBottom: '5%' }}
+                    defaultMinValue={0}
+                    defaultMaxValue={100}
+                    value={valueSingle}
+                    color='green'
+                    onChange={handleChangeOnSingle}
+                  />
+                </Form.Field>
+
+                <Form.Field width={4}>
+                  <label>Earning range</label>
+                  <MultiRangeSlider
+                    style={{ marginTop: '5%', marginBottom: '5%' }}
+                    defaultMinValue={0}
+                    defaultMaxValue={100}
+                    minValue={minValue}
+                    maxValue={maxValue}
+                    color='violet'
+                    showLabels
+                    onChange={handleChangeOnMulti}
+                  />
+                </Form.Field>
               </Form.Group>
-              <Form.Checkbox label='I agree to the Terms and Conditions' />
               <Form.Button>Submit</Form.Button>
             </Form>
           </Grid.Column>
