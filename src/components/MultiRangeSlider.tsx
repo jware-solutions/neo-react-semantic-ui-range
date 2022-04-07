@@ -95,6 +95,7 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
         max={defaultMaxValue}
         value={minValue}
         disabled={disabled}
+        style={{ pointerEvents: 'none' }}
         onChange={(event) => {
           handleChange(parseFloat(event.target.value), maxValue)
         }}
@@ -107,6 +108,7 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
         max={defaultMaxValue}
         value={maxValue}
         disabled={disabled}
+        style={{ pointerEvents: 'none' }}
         onChange={(event) => {
           handleChange(minValue, parseFloat(event.target.value))
         }}
