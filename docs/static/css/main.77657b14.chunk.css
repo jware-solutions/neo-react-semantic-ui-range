@@ -1,6 +1,12 @@
+.slider-parent {
+  display: grid;
+  height: -webkit-max-content;
+  height: max-content;
+}
+
 .slider {
   position: relative;
-  width: 200px;
+  width: 100%;
 }
 
 .slider__track,
@@ -22,10 +28,11 @@
 
 .thumb {
   cursor: pointer;
-  position: absolute;
-  height: 0;
-  width: 200px;
+  height: 0px;
   outline: none;
+  position: relative;
+  top: 2px;
+  width: 100%;
 }
 
 .thumb--left {
@@ -40,14 +47,14 @@
 .thumb::-webkit-slider-thumb,
 .thumb::-moz-range-thumb {
   background-color: #f1f5f7;
-  border: none;
   border-radius: 50%;
+  border: none;
   box-shadow: 0 0 1px 1px #ced4da;
   height: 18px;
-  width: 18px;
   margin-top: 4px;
   pointer-events: all;
   position: relative;
+  width: 18px;
 }
 
 .slider__left-value,
@@ -202,7 +209,26 @@
 /* Allows to show multiple sliders */
 div#root {
 	display: grid;
+	width: 20%;
+}
+
+/* Allows to show multiple sliders */
+div#root {
+	width: 60%;
+}
+
+.slider-label {
+	margin-top: 5% !important;
+}
+
+.label-left {
+	left: -15px;
+}
+
+.label-right {
+	float: right;
+	right: -15px;
 }
 
 
-/*# sourceMappingURL=main.7cbb5ebc.chunk.css.map*/
+/*# sourceMappingURL=main.77657b14.chunk.css.map*/
