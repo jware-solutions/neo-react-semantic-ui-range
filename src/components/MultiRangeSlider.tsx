@@ -87,7 +87,7 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
   const disabledClass = disabled ? 'disabled' : ''
 
   return (
-    <>
+    <div className='slider-parent'>
       <input
         type="range"
         min={defaultMinValue}
@@ -121,7 +121,7 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
       >
         {renderLabels()}
       </SliderTracks>
-    </>
+    </div>
   )
 }
 

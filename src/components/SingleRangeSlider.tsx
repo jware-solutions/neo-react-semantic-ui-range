@@ -71,7 +71,7 @@ const SingleRangeSlider = function (props: SingleRangeSliderProps) {
   const disabledClass = disabled ? 'disabled' : ''
 
   return (
-    <>
+    <div className='slider-parent'>
       <input
         type="range"
         min={defaultMinValue}
@@ -88,7 +88,7 @@ const SingleRangeSlider = function (props: SingleRangeSliderProps) {
       <SliderTracks width={selectedPercent} color={color} disabled={disabled} inverted={inverted}>
         {renderLabels()}
       </SliderTracks>
-    </>
+    </div>
   )
 }
 

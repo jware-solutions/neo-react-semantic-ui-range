@@ -1,0 +1,17 @@
+/* Allows to show multiple sliders */
+div#root {
+	width: 60%;
+}
+
+.slider-label {
+	margin-top: 5% !important;
+}
+
+.label-left {
+	left: -15px;
+}
+
+.label-right {
+	float: right;
+	right: -15px;
+}

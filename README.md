@@ -28,7 +28,11 @@ Here are some basic examples, **but you can play with all the parameters in the 
 ### Single slider
 
 ```tsx
+// Component
 import { SingleRangeSlider } from 'neo-react-semantic-ui-range'
+
+// Styles
+import 'neo-react-semantic-ui-range/dist/styles.min.css'
 
 const MySingleSlider = (props) => {
 	const [value, setValue] = useState<number>(45.5)
@@ -57,7 +61,11 @@ const MySingleSlider = (props) => {
 ### Multi range slider
 
 ```tsx
+// Component
 import { MultiRangeSlider } from 'neo-react-semantic-ui-range'
+
+// Styles
+import 'neo-react-semantic-ui-range/dist/styles.min.css'
 
 const MyMultiRangeSlider = (props) => {
 	const [minValue, setMinValue] = useState<number>(30)
