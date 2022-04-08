@@ -99,7 +99,15 @@ const MyMultiRangeSlider = (props) => {
 
 - 🚀 Written in modern React using hooks and clean 
 - ✨ Fully Typescript support
-- 📖 A lot of colors and StoryBook
+- 📖 A lot of colors and Storybook
+
+
+## Development
+
+Any PR is welcome! You can run Storybook to play and test your changes:
+
+1. Install dependencies with `npm i` or `yarn install`
+1. Run Storybook: `npm run storybook`
 
 
 ## License
