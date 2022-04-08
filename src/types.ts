@@ -30,8 +30,12 @@ interface SliderProps {
     disabled?: boolean;
     /** A slider can have its colors inverted for contrast on a dark background. Default to `false`. */
     inverted?: boolean;
-    /** Component custom styles. */
+    /** Custom styles to assign to slider container. */
     style?: CSSProperties;
+    /** ID to assign to slider container. */
+    id?: string;
+    /** CSS class to assign to slider container. */
+    className?: string;
 }
 
 export type { RangeColor, SliderProps }

@@ -35,6 +35,8 @@ const SingleRangeSlider = function (props: SingleRangeSliderProps) {
     disabled = false,
     inverted = false,
     style,
+    id,
+    className = '',
     onChange
   } = props
 
@@ -72,7 +74,7 @@ const SingleRangeSlider = function (props: SingleRangeSliderProps) {
   const disabledClass = disabled ? 'disabled' : ''
 
   return (
-    <div className='slider-parent' style={style}>
+    <div id={id} className={`slider-parent ${className}`} style={style}>
       <input
         type="range"
         min={defaultMinValue}
