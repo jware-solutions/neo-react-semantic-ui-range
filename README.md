@@ -28,7 +28,11 @@ Here are some basic examples, **but you can play with all the parameters in the 
 ### Single slider
 
 ```tsx
+// Component
 import { SingleRangeSlider } from 'neo-react-semantic-ui-range'
+
+// Styles
+import 'neo-react-semantic-ui-range/dist/styles.min.css'
 
 const MySingleSlider = (props) => {
 	const [value, setValue] = useState<number>(45.5)
@@ -57,7 +61,11 @@ const MySingleSlider = (props) => {
 ### Multi range slider
 
 ```tsx
+// Component
 import { MultiRangeSlider } from 'neo-react-semantic-ui-range'
+
+// Styles
+import 'neo-react-semantic-ui-range/dist/styles.min.css'
 
 const MyMultiRangeSlider = (props) => {
 	const [minValue, setMinValue] = useState<number>(30)
@@ -91,7 +99,19 @@ const MyMultiRangeSlider = (props) => {
 
 - 🚀 Written in modern React using hooks and clean 
 - ✨ Fully Typescript support
-- 📖 A lot of colors and StoryBook
+- 📖 A lot of colors and Storybook
+
+
+## Development
+
+Any PR is welcome! A typical roadmap to contribute would be:
+
+1. Install dependencies with `npm i` or `yarn install`
+1. Fix a bug, add a new feature or make some changes.
+1. Run Storybook to play and test: `npm run storybook`
+1. Check if all linter rules are covered: `npm run lint`
+1. To build the entire package we use [Rollup][rollup]: `npm run build`
+1. Make a PR.
 
 
 ## License
@@ -102,3 +122,4 @@ This repository is distributed under the terms of the MIT license.
 [semantic-ui]: https://react.semantic-ui.com/
 [fomantic-ui]: https://fomantic-ui.com/
 [storybook]: https://jware-solutions.github.io/neo-react-semantic-ui-range/
+[rollup]: https://rollupjs.org/guide/en/

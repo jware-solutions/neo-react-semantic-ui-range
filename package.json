@@ -1,19 +1,20 @@
 {
   "name": "neo-react-semantic-ui-range",
-  "version": "0.3.1",
+  "version": "0.3.6",
   "description": "A modern Semantic/Fomantic UI Slider component for React",
   "scripts": {
-    "build": "del 'dist/*' && npx tsc && npm run copy-styles",
-    "copy-styles": "copyfiles -u 1 src/*.css dist/",
+    "rollup": "rollup -c",
+    "build": "del 'dist/*' && npm run rollup",
     "lint": "eslint ./src/**/*.{ts,tsx,js}",
     "upload": "npm run build && npm publish",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o docs-build"
   },
-  "main": "dist/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "/dist"
+    "dist"
   ],
   "author": "Ramiro Federico Lasorsa <ramiroflasorsa@gmail.com>",
   "contributors": [
@@ -43,7 +44,8 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
-    "typescript": "^4.3.5"
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.1.2"
   },
   "eslintConfig": {
     "extends": [
@@ -74,6 +76,9 @@
     ]
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.3",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "@rollup/plugin-typescript": "^8.3.1",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-interactions": "^6.4.19",
@@ -94,6 +99,12 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.1",
     "eslint-plugin-react": "^7.27.1",
-    "eslint-plugin-storybook": "^0.5.7"
+    "eslint-plugin-storybook": "^0.5.7",
+    "rollup": "^2.70.1",
+    "rollup-plugin-dts": "^4.2.0",
+    "rollup-plugin-scss": "^3.0.0",
+    "sass": "^1.49.11",
+    "tslib": "^2.3.1",
+    "typescript": "^4.6.3"
   }
 }

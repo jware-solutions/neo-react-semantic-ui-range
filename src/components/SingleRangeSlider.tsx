@@ -34,6 +34,9 @@ const SingleRangeSlider = function (props: SingleRangeSliderProps) {
     step = 1,
     disabled = false,
     inverted = false,
+    style,
+    id,
+    className = '',
     onChange
   } = props
 
@@ -49,12 +52,11 @@ const SingleRangeSlider = function (props: SingleRangeSliderProps) {
   }
 
   /**
-   * Returns the selected slice of the slider, in percent from 0 to 100.
+   * Returns the selected slice of the slider, in percent considering range from defaultMinValue to defaultMaxValue.
    *
-   * @param newValue - New value set on the slider.
-   * @returns Percent of the slider that need to be colored, from 0 to 100.
+   * @returns Percent of the slider that need to be colored.
    */
-  const getSelectedSliderPercent = (newValue: number) => newValue / defaultMaxValue * 100
+  const getSelectedSliderPercent = () => ((value - defaultMinValue) * 100) / (defaultMaxValue - defaultMinValue)
 
   /**
    * If `showLabels` is `true`, returns a `<div>` that contains a label with the current value of the slider.
@@ -67,11 +69,11 @@ const SingleRangeSlider = function (props: SingleRangeSliderProps) {
     }
   }
 
-  const selectedPercent = `${getSelectedSliderPercent(value)}%`
+  const selectedPercent = `${getSelectedSliderPercent()}%`
   const disabledClass = disabled ? 'disabled' : ''
 
   return (
-    <>
+    <div id={id} className={`slider-parent ${className}`} style={style}>
       <input
         type="range"
         min={defaultMinValue}
@@ -88,7 +90,7 @@ const SingleRangeSlider = function (props: SingleRangeSliderProps) {
       <SliderTracks width={selectedPercent} color={color} disabled={disabled} inverted={inverted}>
         {renderLabels()}
       </SliderTracks>
-    </>
+    </div>
   )
 }
 

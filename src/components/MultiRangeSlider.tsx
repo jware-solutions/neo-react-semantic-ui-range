@@ -40,7 +40,10 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
     showLabels = false,
     disabled = false,
     inverted = false,
-    color = 'green'
+    color = 'green',
+    style,
+    id,
+    className = ''
   } = props
 
   /**
@@ -87,13 +90,14 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
   const disabledClass = disabled ? 'disabled' : ''
 
   return (
-    <>
+    <div id={id} className={`slider-parent ${className}`} style={style}>
       <input
         type="range"
         min={defaultMinValue}
         max={defaultMaxValue}
         value={minValue}
         disabled={disabled}
+        style={{ pointerEvents: 'none' }}
         onChange={(event) => {
           handleChange(parseFloat(event.target.value), maxValue)
         }}
@@ -106,6 +110,7 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
         max={defaultMaxValue}
         value={maxValue}
         disabled={disabled}
+        style={{ pointerEvents: 'none' }}
         onChange={(event) => {
           handleChange(minValue, parseFloat(event.target.value))
         }}
@@ -121,7 +126,7 @@ const MultiRangeSlider = function (props: MultiRangeSliderProps) {
       >
         {renderLabels()}
       </SliderTracks>
-    </>
+    </div>
   )
 }
 
