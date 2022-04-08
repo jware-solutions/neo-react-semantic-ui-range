@@ -104,10 +104,14 @@ const MyMultiRangeSlider = (props) => {
 
 ## Development
 
-Any PR is welcome! You can run Storybook to play and test your changes:
+Any PR is welcome! A typical roadmap to contribute would be:
 
 1. Install dependencies with `npm i` or `yarn install`
-1. Run Storybook: `npm run storybook`
+1. Fix a bug, add a new feature or make some changes.
+1. Run Storybook to play and test: `npm run storybook`
+1. Check if all linter rules are covered: `npm run lint`
+1. To build the entire package we use [Rollup][rollup]: `npm run build`
+1. Make a PR.
 
 
 ## License
@@ -118,3 +122,4 @@ This repository is distributed under the terms of the MIT license.
 [semantic-ui]: https://react.semantic-ui.com/
 [fomantic-ui]: https://fomantic-ui.com/
 [storybook]: https://jware-solutions.github.io/neo-react-semantic-ui-range/
+[rollup]: https://rollupjs.org/guide/en/
